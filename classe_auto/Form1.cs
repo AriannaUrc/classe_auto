@@ -80,7 +80,19 @@ namespace classe_auto
     }
     class auto
     {
-        public int Marcia { get; set; }
+
+        private int _marcia;
+        public int Marcia {
+            get { return _marcia; }
+            set { 
+                
+                if (value >= -1 && value <= 5) 
+                {
+                    _marcia = value;
+                } 
+            
+            }
+        }
         public int Velocita { get; set; }
 
         public auto()

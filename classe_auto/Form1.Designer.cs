@@ -100,9 +100,9 @@
             // listView2
             // 
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(135, 295);
+            this.listView2.Location = new System.Drawing.Point(125, 293);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(37, 43);
+            this.listView2.Size = new System.Drawing.Size(37, 50);
             this.listView2.TabIndex = 7;
             this.listView2.UseCompatibleStateImageBehavior = false;
             // 
