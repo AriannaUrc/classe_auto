@@ -12,9 +12,15 @@ namespace classe_auto
 {
     public partial class Form1 : Form
     {
+        auto Car;
         public Form1()
         {
             InitializeComponent();
+
+            Car = new auto();
+
+            SetVelocityScreen();
+            SetGearScreen();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -24,12 +30,52 @@ namespace classe_auto
 
         private void freno_button_Click(object sender, EventArgs e)
         {
-
+            Car.Decelera(5);
+            SetVelocityScreen();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
 
+        private void acceleratore_button_Click(object sender, EventArgs e)
+        {
+            Car.Accelera(5);
+            SetVelocityScreen();
+        }
+
+
+        private void SetVelocityScreen()
+        {
+            listView1.Items.Clear();
+            if (Car.Velocita == 0)
+            {
+                listView1.Items.Add("spenta");
+            }
+            else
+            {
+                listView1.Items.Add(Car.Velocita.ToString());
+            }
+        }
+
+
+        private void SetGearScreen()
+        {
+            listView2.Items.Clear();
+            listView2.Items.Add(Car.Marcia.ToString());
+
+            //MessageBox.Show(Car.Marcia.ToString());
+        }
+
+
+
+        private void marcia_add_button_Click(object sender, EventArgs e)
+        {
+            Car.AddMarcia();
+            SetGearScreen();
+        }
+
+        private void marcia_sub_button_Click(object sender, EventArgs e)
+        {
+            Car.SubMarcia();
+            SetGearScreen();
         }
     }
     class auto
@@ -69,16 +115,16 @@ namespace classe_auto
 
         }
 
-        public void AddMarcia(int val)
+        public void AddMarcia()
         {
             if(Marcia<5)
-            Marcia += val;
+            Marcia++;
         }
 
-        public void SubMarcia(int val)
+        public void SubMarcia()
         {
             if (Marcia>-1)
-            Marcia -= val;
+            Marcia--;
         }
 
         public bool Accesa()
