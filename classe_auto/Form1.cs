@@ -64,11 +64,13 @@ namespace classe_auto
 
         public void AddMarcia(int val)
         {
+            if(Marcia<5)
             Marcia += val;
         }
 
         public void SubMarcia(int val)
         {
+            if (Marcia>-1)
             Marcia -= val;
         }
 
