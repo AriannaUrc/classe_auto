@@ -26,6 +26,7 @@ namespace classe_auto
             }
 
             //la macchina è gia ferma
+            AutoModMarcia();
             return 2;
         }
 
