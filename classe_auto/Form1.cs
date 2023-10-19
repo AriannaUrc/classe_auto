@@ -130,17 +130,18 @@ namespace classe_auto
         }
 
 
-        public void ModMarcia(bool add = true)
+        public void AddMarcia()
         {
-            if (add)
-            {
-                if (Marcia < 5)
-                    Marcia++;
-            }
-            {
-                if (Marcia > -1)
-                    Marcia--;
-            }
+
+            if (Marcia < 5)
+                Marcia++;
+        }
+
+        public void SubMarcia()
+        {
+
+            if (Marcia > 0)
+                Marcia--;
         }
 
         public bool Accesa()
@@ -162,7 +163,6 @@ namespace classe_auto
         public override void Accelera(int val)
         {
             Velocita += val;
-
             AutoModMarcia();
             
         }
@@ -177,35 +177,29 @@ namespace classe_auto
 
             if (Velocita > 0 && Velocita <= 25)
             {
-                Marcia = -1;
+                Marcia = 1;
                 return;
             }
 
             if (Velocita > 25 && Velocita <= 50)
             {
-                Marcia = 1;
+                Marcia = 2;
                 return;
             }
 
             if (Velocita > 50 && Velocita <= 75)
             {
-                Marcia = 2;
+                Marcia = 3;
                 return;
             }
 
             if (Velocita > 75 && Velocita <= 100)
             {
-                Marcia = 3;
-                return;
-            }
-
-            if (Velocita > 100 && Velocita <= 125)
-            {
                 Marcia = 4;
                 return;
             }
 
-            if (Velocita > 125)
+            if (Velocita > 100)
             {
                 Marcia = 5;
                 return;
