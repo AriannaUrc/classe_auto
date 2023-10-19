@@ -68,13 +68,13 @@ namespace classe_auto
 
         private void marcia_add_button_Click(object sender, EventArgs e)
         {
-            Car.AddMarcia();
+            Car.ModMarcia(true);
             SetGearScreen();
         }
 
         private void marcia_sub_button_Click(object sender, EventArgs e)
         {
-            Car.SubMarcia();
+            Car.ModMarcia(false);
             SetGearScreen();
         }
     }
@@ -82,15 +82,17 @@ namespace classe_auto
     {
 
         private int _marcia;
-        public int Marcia {
+        public int Marcia
+        {
             get { return _marcia; }
-            set { 
-                
-                if (value >= -1 && value <= 5) 
+            set
+            {
+
+                if (value >= -1 && value <= 5)
                 {
                     _marcia = value;
-                } 
-            
+                }
+
             }
         }
         public int Velocita { get; set; }
@@ -108,40 +110,42 @@ namespace classe_auto
         }
 
 
-        public void Accelera(int val)
+        public virtual void Accelera(int val)
         {
             Velocita += val;
 
         }
 
-        public int Decelera(int val)
+        public virtual int Decelera(int val)
         {
-            if (Velocita>=val)
+            if (Velocita >= val)
             {
                 Velocita -= val;
                 return 0;
             }
 
-            //la macchina e gia ferma
+            //la macchina è gia ferma
             return 2;
 
         }
 
-        public void AddMarcia()
-        {
-            if(Marcia<5)
-            Marcia++;
-        }
 
-        public void SubMarcia()
+        public void ModMarcia(bool add = true)
         {
-            if (Marcia>-1)
-            Marcia--;
+            if (add)
+            {
+                if (Marcia < 5)
+                    Marcia++;
+            }
+            {
+                if (Marcia > -1)
+                    Marcia--;
+            }
         }
 
         public bool Accesa()
         {
-            if(Velocita==0)
+            if (Velocita == 0)
             {
                 return false;
             }
@@ -151,5 +155,50 @@ namespace classe_auto
             }
         }
 
+    }
+
+    class autoAutoma : auto
+    {
+        public override void Accelera(int val)
+        {
+            Velocita += val;
+
+
+            if (Velocita > 0 && Velocita <= 25)
+            {
+                Marcia = -1;
+                return;
+            }
+
+            if (Velocita > 25 && Velocita <= 50)
+            {
+                Marcia = 1;
+                return;
+            }
+
+            if (Velocita > 50 && Velocita <= 75)
+            {
+                Marcia = 2;
+                return;
+            }
+
+            if (Velocita > 75 && Velocita <= 100)
+            {
+                Marcia = 3;
+                return;
+            }
+
+            if (Velocita > 100 && Velocita <= 125)
+            {
+                Marcia = 4;
+                return;
+            }
+
+            if (Velocita > 125)
+            {
+                Marcia = 5;
+                return;
+            }
+        }
     }
 }
