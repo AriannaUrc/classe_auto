@@ -68,13 +68,13 @@ namespace classe_auto
 
         private void marcia_add_button_Click(object sender, EventArgs e)
         {
-            Car.ModMarcia(true);
+            Car.AddMarcia();
             SetGearScreen();
         }
 
         private void marcia_sub_button_Click(object sender, EventArgs e)
         {
-            Car.ModMarcia(false);
+            Car.SubMarcia();
             SetGearScreen();
         }
     }
@@ -164,7 +164,21 @@ namespace classe_auto
         {
             Velocita += val;
             AutoModMarcia();
-            
+        }
+
+        public override int Decelera(int val)
+        {
+            if (Velocita >= val)
+            {
+                Velocita -= val;
+
+                AutoModMarcia();
+
+                return 0;
+            }
+
+            //la macchina è gia ferma
+            return 2;
         }
 
         public void AutoModMarcia()
