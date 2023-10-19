@@ -17,6 +17,9 @@ namespace classe_auto
         {
             InitializeComponent();
 
+            MessageBox.Show("Vuoi un'auto a cambio automatico? (SI/NO)");
+            
+
             Car = new auto();
 
             SetVelocityScreen();
@@ -78,146 +81,5 @@ namespace classe_auto
             SetGearScreen();
         }
     }
-    class auto
-    {
 
-        private int _marcia;
-        public int Marcia
-        {
-            get { return _marcia; }
-            set
-            {
-
-                if (value >= -1 && value <= 5)
-                {
-                    _marcia = value;
-                }
-
-            }
-        }
-        public int Velocita { get; set; }
-
-        public auto()
-        {
-            Marcia = 0;
-            Velocita = 0;
-        }
-
-        public auto(int marcia, int velocita)
-        {
-            Marcia = marcia;
-            Velocita = velocita;
-        }
-
-
-        public virtual void Accelera(int val)
-        {
-            Velocita += val;
-
-        }
-
-        public virtual int Decelera(int val)
-        {
-            if (Velocita >= val)
-            {
-                Velocita -= val;
-                return 0;
-            }
-
-            //la macchina è gia ferma
-            return 2;
-
-        }
-
-
-        public void AddMarcia()
-        {
-
-            if (Marcia < 5)
-                Marcia++;
-        }
-
-        public void SubMarcia()
-        {
-
-            if (Marcia > 0)
-                Marcia--;
-        }
-
-        public bool Accesa()
-        {
-            if (Velocita == 0)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-    }
-
-    class autoAutoma : auto
-    {
-        public override void Accelera(int val)
-        {
-            Velocita += val;
-            AutoModMarcia();
-        }
-
-        public override int Decelera(int val)
-        {
-            if (Velocita >= val)
-            {
-                Velocita -= val;
-
-                AutoModMarcia();
-
-                return 0;
-            }
-
-            //la macchina è gia ferma
-            return 2;
-        }
-
-        public void AutoModMarcia()
-        {
-            if (Velocita == 0)
-            {
-                Marcia = 0;
-                return;
-            }
-
-            if (Velocita > 0 && Velocita <= 25)
-            {
-                Marcia = 1;
-                return;
-            }
-
-            if (Velocita > 25 && Velocita <= 50)
-            {
-                Marcia = 2;
-                return;
-            }
-
-            if (Velocita > 50 && Velocita <= 75)
-            {
-                Marcia = 3;
-                return;
-            }
-
-            if (Velocita > 75 && Velocita <= 100)
-            {
-                Marcia = 4;
-                return;
-            }
-
-            if (Velocita > 100)
-            {
-                Marcia = 5;
-                return;
-            }
-        }
-    }
 }
