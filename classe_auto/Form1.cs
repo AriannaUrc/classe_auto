@@ -163,6 +163,17 @@ namespace classe_auto
         {
             Velocita += val;
 
+            AutoModMarcia();
+            
+        }
+
+        public void AutoModMarcia()
+        {
+            if (Velocita == 0)
+            {
+                Marcia = 0;
+                return;
+            }
 
             if (Velocita > 0 && Velocita <= 25)
             {
