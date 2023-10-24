@@ -19,8 +19,6 @@ namespace classe_auto
 
         public autoAutoma(int marcia, int velocita, int girimotore) : base(marcia, velocita)
         {
-            Marcia = marcia;
-            Velocita = velocita;
             GiriMotore = girimotore;
         }
 
