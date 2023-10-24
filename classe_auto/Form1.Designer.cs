@@ -64,7 +64,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(37, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(499, 409);
+            this.pictureBox1.Size = new System.Drawing.Size(518, 409);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 450);
+            this.ClientSize = new System.Drawing.Size(592, 450);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.marcia_sub_button);
             this.Controls.Add(this.marcia_add_button);
