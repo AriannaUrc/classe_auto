@@ -22,6 +22,8 @@ namespace classe_auto
             if(promptValue.ToLower() == "si") 
             {
                 Car = new autoAutoma();
+                marcia_add_button.Enabled = false;
+                marcia_sub_button.Enabled = false;
             }
             else
             {
@@ -41,6 +43,7 @@ namespace classe_auto
         {
             Car.Decelera(5);
             SetVelocityScreen();
+            SetGearScreen();
         }
 
 
@@ -48,6 +51,7 @@ namespace classe_auto
         {
             Car.Accelera(5);
             SetVelocityScreen();
+            SetGearScreen();
         }
 
 
