@@ -64,7 +64,7 @@ namespace classe_auto
             }
             else
             {
-                listView1.Items.Add(Car.Velocita.ToString());
+                listView1.Items.Add(Car.Velocita.ToString() + " Km/h");
             }
         }
 

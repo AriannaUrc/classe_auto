@@ -96,15 +96,17 @@
             this.listView1.Size = new System.Drawing.Size(97, 43);
             this.listView1.TabIndex = 2;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // listView2
             // 
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(125, 293);
+            this.listView2.Location = new System.Drawing.Point(125, 291);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(37, 50);
+            this.listView2.Size = new System.Drawing.Size(47, 38);
             this.listView2.TabIndex = 7;
             this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listView2.View = System.Windows.Forms.View.List;
             // 
             // Form1
             // 
@@ -119,7 +121,7 @@
             this.Controls.Add(this.acceleratore_button);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Auto";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
