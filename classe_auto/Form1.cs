@@ -58,13 +58,21 @@ namespace classe_auto
         private void SetVelocityScreen()
         {
             listView1.Items.Clear();
-            if (Car.Velocita == 0)
+            if (!Car.Accesa())
             {
                 listView1.Items.Add("spenta");
             }
             else
             {
                 listView1.Items.Add(Car.Velocita.ToString() + " Km/h");
+            }
+
+            //MessageBox.Show (Car.GetType().ToString());
+            if(Car.GetType().ToString() == "classe_auto.autoAutoma")
+            {
+                
+                listView3.Items.Clear();
+                listView3.Items.Add(Car.GiriMotore.ToString());
             }
         }
 

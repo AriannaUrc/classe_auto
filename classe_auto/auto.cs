@@ -24,6 +24,15 @@ namespace classe_auto
 
             }
         }
+
+        int _giriMotore;
+
+        public int GiriMotore
+        {
+            get { return _giriMotore; }
+            set { _giriMotore = value; }
+        }
+
         public int Velocita { get { return _velocita; } set { _velocita = value; } }
 
         public auto()

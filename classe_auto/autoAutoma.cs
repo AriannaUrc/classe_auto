@@ -8,13 +8,7 @@ namespace classe_auto
 {
     internal class autoAutoma : auto
     {
-        int _giriMotore;
-
-        public int GiriMotore
-        {
-            get { return _giriMotore;}
-            set { _giriMotore = value;}
-        }
+        
 
         public autoAutoma() : base() 
         {
@@ -34,6 +28,7 @@ namespace classe_auto
         {
             Velocita += val;
             AutoModMarcia();
+            AutoGiri();
         }
 
         public override int Decelera(int val)
@@ -43,12 +38,14 @@ namespace classe_auto
                 Velocita -= val;
 
                 AutoModMarcia();
+                AutoGiri();
 
                 return 0;
             }
 
             //la macchina è gia ferma
             AutoModMarcia();
+            AutoGiri();
             return 2;
         }
 
@@ -89,6 +86,12 @@ namespace classe_auto
                 Marcia = 5;
                 return;
             }
+        }
+
+
+        public void AutoGiri()
+        {
+            GiriMotore =  Velocita * 100 / Marcia;
         }
     }
 }
