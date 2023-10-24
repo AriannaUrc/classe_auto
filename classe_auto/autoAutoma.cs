@@ -8,6 +8,28 @@ namespace classe_auto
 {
     internal class autoAutoma : auto
     {
+        int _giriMotore;
+
+        public int GiriMotore
+        {
+            get { return _giriMotore;}
+            set { _giriMotore = value;}
+        }
+
+        public autoAutoma() : base() 
+        {
+            Marcia = 0;
+            Velocita = 0;
+            GiriMotore = 0;
+        }
+
+        public autoAutoma(int marcia, int velocita, int girimotore) : base(marcia, velocita)
+        {
+            Marcia = marcia;
+            Velocita = velocita;
+            GiriMotore = girimotore;
+        }
+
         public override void Accelera(int val)
         {
             Velocita += val;

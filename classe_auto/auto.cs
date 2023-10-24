@@ -9,9 +9,11 @@ namespace classe_auto
     internal class auto
     {
         private int _marcia;
+        private int _velocita;
         public int Marcia
-        {
+        { 
             get { return _marcia; }
+
             set
             {
 
@@ -22,7 +24,7 @@ namespace classe_auto
 
             }
         }
-        public int Velocita { get; set; }
+        public int Velocita { get { return _velocita; } set { _velocita = value; } }
 
         public auto()
         {
