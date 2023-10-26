@@ -6,20 +6,23 @@ using System.Threading.Tasks;
 
 namespace classe_auto
 {
-    internal class autoAutoma : auto
+    internal class AutoAutoma : Auto
     {
         
 
-        public autoAutoma() : base() 
+        public AutoAutoma() : base() 
         {
-            Marcia = 0;
-            Velocita = 0;
             GiriMotore = 0;
         }
 
-        public autoAutoma(int marcia, int velocita, int girimotore) : base(marcia, velocita)
+        public AutoAutoma(int marcia, int velocita, int girimotore) : base(marcia, velocita)
         {
             GiriMotore = girimotore;
+        }
+
+        public AutoAutoma(Auto temp) : base(temp)
+        {
+            GiriMotore = temp.GiriMotore;
         }
 
         public override void Accelera(int val)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace classe_auto
 {
-    internal class auto
+    internal class Auto
     {
         private int _marcia;
         private int _velocita;
@@ -35,16 +35,22 @@ namespace classe_auto
 
         public int Velocita { get { return _velocita; } set { _velocita = value; } }
 
-        public auto()
+        public Auto()
         {
             Marcia = 0;
             Velocita = 0;
         }
 
-        public auto(int marcia, int velocita)
+        public Auto(int marcia, int velocita)
         {
             Marcia = marcia;
             Velocita = velocita;
+        }
+
+        public Auto(Auto temp)
+        {
+            Velocita = temp.Velocita;
+            Marcia = temp.Marcia;
         }
 
 

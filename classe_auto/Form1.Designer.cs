@@ -37,6 +37,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.listView2 = new System.Windows.Forms.ListView();
             this.listView3 = new System.Windows.Forms.ListView();
+            this.copia_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,11 +120,22 @@
             this.listView3.UseCompatibleStateImageBehavior = false;
             this.listView3.View = System.Windows.Forms.View.List;
             // 
+            // copia_button
+            // 
+            this.copia_button.Location = new System.Drawing.Point(471, 216);
+            this.copia_button.Name = "copia_button";
+            this.copia_button.Size = new System.Drawing.Size(52, 23);
+            this.copia_button.TabIndex = 9;
+            this.copia_button.Text = "copia";
+            this.copia_button.UseVisualStyleBackColor = true;
+            this.copia_button.Click += new System.EventHandler(this.copia_button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 450);
+            this.Controls.Add(this.copia_button);
             this.Controls.Add(this.listView3);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.marcia_sub_button);
@@ -150,6 +162,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Button copia_button;
     }
 }
 

@@ -12,7 +12,7 @@ namespace classe_auto
 {
     public partial class Form1 : Form
     {
-        auto Car;
+        Auto Car;
         public Form1()
         {
             InitializeComponent();
@@ -21,13 +21,13 @@ namespace classe_auto
 
             if(promptValue.ToLower() == "si") 
             {
-                Car = new autoAutoma();
+                Car = new AutoAutoma();
                 marcia_add_button.Enabled = false;
                 marcia_sub_button.Enabled = false;
             }
             else
             {
-                Car = new auto();
+                Car = new Auto();
             }
 
             SetVelocityScreen();
@@ -97,6 +97,15 @@ namespace classe_auto
         {
             Car.SubMarcia();
             SetGearScreen();
+        }
+
+        private void copia_button_Click(object sender, EventArgs e)
+        {
+            Auto temp = new Auto(Car);
+            MessageBox.Show("velocita auto: " + temp.Velocita.ToString() + " marcia auto: " + temp.Marcia.ToString() + " giriMotore auto: " + temp.GiriMotore.ToString());
+
+            AutoAutoma tempAuto = new AutoAutoma(Car);
+            MessageBox.Show("velocita autoAutoma: " + tempAuto.Velocita.ToString() + " marcia autoAutoma: " + tempAuto.Marcia.ToString() + " giriMotore autoAutoma: " + tempAuto.GiriMotore.ToString());
         }
     }
 
